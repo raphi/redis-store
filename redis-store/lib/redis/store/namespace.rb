@@ -25,6 +25,9 @@ class Redis
         namespace(key) { |key| super(key) }
       end
 
+      def expire(key, seconds)
+        namespace(key) { |key| super(key, seconds) }
+
       def incrby(key, increment)
         namespace(key) { |key| super(key, increment) }
       end
